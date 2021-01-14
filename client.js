@@ -2,16 +2,21 @@ function spHREmploymentInfo($scope, $element, $window, $location, $rootScope, $t
 	
 	//Form Sections
 	var fields = {
-		hr_profile:['user.employee_number','u_bus_segment','u_division','u_department','position', 'u_working_title', 'u_location', 'u_location_type', 'u_original_hire_date','u_assignment_cateogry', 'u_bus_unit']
-	};
+		hr_profile:['position','business_title','start_date','end_date','u_business_segment','u_division','department']
+	}
 	
 	$scope.getProfileModelFields = function() {
 		
-		return $scope.data.hrProfileModelList
-						.filter(function(field) {
-							return $scope.displayField("hr_profile", field.name);
-						});
+		return $scope.data.hrProfileModelList.filter(function(field) {
+			 return $scope.displayField("hr_profile", field.name);
+			}
+		);
+
 	};
+
+	// Why are they in the order that they are in?!
+	// Why dateTime not showing?
+	
 	
 	$scope.dataNotEmpty = function() {
 		return $scope.getProfileModelFields().length > 0;
