@@ -1,12 +1,11 @@
 <sp-panel rect="rect" ng-if="data.profileExists && data.isLoggedInUsersProfile && dataNotEmpty()">
-    <div class="list-group">
-      <div ng-repeat="fieldModel in getProfileModelFields()">
-        <div class="list-group-item no-border">
-          <div>
-              <sp-editable-field block="true" table="sn_hr_core_job" editable-by-user="data.isLoggedInUsersProfile" table-id="data.hrProfileID" field-model="fieldModel"></sp-editable-field>
-          </div>
+  <div class="list-group">
+    <div ng-repeat="fieldModel in getProfileModelFields()">
+      <div class="list-group-item no-border">
+        <div>
+        	<sp-editable-field block="true" table="sn_hr_core_profile" editable-by-user="data.isLoggedInUsersProfile" table-id="data.hrProfileID" field-model="fieldModel"></sp-editable-field>
         </div>
       </div>
     </div>
-  </sp-panel>
-  
+  </div>
+</sp-panel>
